@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import CCParent from './ClassComps/CCParent'
+import CCStudent from './ClassComps/CCStudent'
+import EHeader from './Elements/EHeader'
+import FCPerson from './FuncComps/FCPerson'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      {EHeader}
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <CCParent/>
+        <CCStudent id={1} name="avi" grade={100}/>
+        <CCStudent id={2} name="benny" grade={99}/> <br />
+        <FCPerson id={1} name="avi" />
+        <FCPerson id={2} name="benny" />
+        <FCPerson id={3} name="cahrlie" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {EHeader}
     </>
   )
 }
